@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kisea Mini Mall</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .store {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .total {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="store">
+    <h1>🛒 Welcome to Mini Mall</h1>
+
+    <div class="item">
+      <span>Milk ($10)</span>
+      <button onclick="addItem(10)">Add</button>
+    </div>
+
+    <div class="item">
+      <span>Water ($1)</span>
+      <button onclick="addItem(1)">Add</button>
+    </div>
+
+    <div class="item">
+      <span>Bread ($5)</span>
+      <button onclick="addItem(5)">Add</button>
+    </div>
+
+    <div class="item">
+      <span>Apple ($3)</span>
+      <button onclick="addItem(3)">Add</button>
+    </div>
+
+    <div class="total">
+      Total: $<span id="total">0</span>
+    </div>
+
+    <button onclick="resetCart()">Reset</button>
+  </div>
+
+  <script>
+    let total = 0;
+
+    function addItem(price) {
+      total += price;
+      document.getElementById("total").innerText = total;
+    }
+
+    function resetCart() {
+      total = 0;
+      document.getElementById("total").innerText = total;
+    }
+  </script>
+
+</body>
+</html>
